@@ -12,7 +12,7 @@ by adding `alchemist_camp` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:alchemist_camp, "~> 0.1.0"}
+    {:alchemist_camp, "~> 0.1"}
   ]
 end
 ```
