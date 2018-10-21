@@ -11,7 +11,8 @@ defmodule Guessing.Game do
 
   @spec play(String.t(), Range.t()) :: true
   defp play(name, range) do
-    IO.gets("#{name}, I'm guessing #{mid(range)}? [Yhl] ")
+    "#{name}, I'm guessing #{mid(range)}? [Yhl] "
+    |> IO.gets()
     |> String.trim()
     |> String.downcase()
     |> String.first()
@@ -54,7 +55,8 @@ defmodule Guessing.Game do
   defp play_again?(name) do
     IO.puts("I knew I'd guess your number!")
 
-    IO.gets("#{name}, play again? [Yn] ")
+    "#{name}, play again? [Yn] "
+    |> IO.gets()
     |> String.trim()
     |> String.downcase()
     |> String.first()

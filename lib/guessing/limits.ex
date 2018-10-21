@@ -7,7 +7,8 @@ defmodule Guessing.Limits do
   @spec get_range(String.t()) :: Range.t()
   def get_range(name) do
     range =
-      IO.gets("#{name}, guessing range, please? [low high] ")
+      "#{name}, guessing range, please? [low high] "
+      |> IO.gets()
       |> String.trim()
 
     range
@@ -30,10 +31,14 @@ defmodule Guessing.Limits do
   @spec prompt_range(String.t()) :: Range.t()
   defp prompt_range(name) do
     {low_first..low_last, high_first..high_last} = {@low_range, @high_range}
-    IO.puts("Lower limit must be between #{low_first} and #{low_last}.")
-    IO.puts("Upper limit must be between #{high_first} and #{high_last}.")
-    IO.puts("Lower limit must be <= upper limit.")
-    IO.puts("#{name}, please enter valid guessing range...")
+
+    IO.puts("""
+    Lower limit must be between #{low_first} and #{low_last}.
+    Upper limit must be between #{high_first} and #{high_last}.
+    Lower limit must be <= upper limit.
+    #{name}, please enter valid guessing range...
+    """)
+
     get_range(name)
   end
 end

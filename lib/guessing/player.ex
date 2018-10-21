@@ -6,7 +6,8 @@ defmodule Guessing.Player do
   @spec get_name() :: String.t()
   def get_name() do
     name =
-      IO.gets("Hi, your name, please? [name] ")
+      "Hi, your name, please? [name] "
+      |> IO.gets()
       |> String.trim()
 
     # Rough name validation...
