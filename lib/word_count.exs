@@ -4,4 +4,4 @@
 |> File.read!()
 |> String.split(~r/(\\n|[^\w'])+/, trim: true)
 |> Enum.count()
-||> IO.puts()
+|> IO.puts()
