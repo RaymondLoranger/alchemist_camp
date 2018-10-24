@@ -22,8 +22,8 @@
       end
 
     body = File.read!(filename)
-    lines = String.split(body, ~r/(\r\n|\n|\r)/)
-    words = String.split(body, ~r/(\\n|[^\w'])+/, trim: true)
+    lines = String.split(body, ~r/(\n)/)
+    words = String.split(body, ~r/(\n|_|[^\w])+/, trim: true)
     chars = String.split(body, "", trim: true)
 
     Enum.each(flags, fn flag ->
