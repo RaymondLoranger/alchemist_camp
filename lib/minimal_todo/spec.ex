@@ -1,6 +1,4 @@
 defmodule MinimalTodo.Spec do
-  @moduledoc false
-
   alias __MODULE__
 
   @enforce_keys [:filename]
